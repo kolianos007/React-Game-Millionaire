@@ -1,0 +1,98 @@
+@import '../../../../vars.module'
+
+@media (min-width: 1200px)
+  .AnswerItem
+    &:hover
+      &::after, &::before
+        background-color: $orange-inactive
+      svg path
+        stroke: $orange-inactive
+
+.AnswerItem
+  width: 421px
+  height: 72px
+  position: relative
+  margin-bottom: 32px
+  display: flex
+  align-items: center
+  cursor: pointer
+  transition: .3s
+  -webkit-tap-highlight-color: transparent
+  svg path
+    fill: white
+    stroke: $grey
+    transition: .3s
+  &:active, &.selected
+    &::after, &::before
+      background-color: $orange-inactive
+    svg path
+      fill: $bg-selected
+      stroke: $orange-inactive
+  &.correct
+    &::after, &::before
+      background-color: $green
+    svg path
+      fill: $bg-correct
+      stroke: $green
+  &.wrong
+    &::after, &::before
+      background-color: $red
+    svg path
+      fill: $bg-wrong
+      stroke: $red
+  &::after, &::before
+    content: ''
+    width: 17px
+    height: 1px
+    position: absolute
+    background-color: $grey
+    transform: translateY(-50%)
+    transition: .3s
+    top: 50%
+  &::after
+    right: 0px
+  &::before
+    left: 0px
+  svg
+    position: absolute
+    width: 100%
+    height: 100%
+
+.AnswerText
+  z-index: 999
+  margin-left: 48px
+  font-size: 20px
+  font-weight: 400
+  line-height: 23px
+  max-width: 300px
+  span
+    color: $orange
+    margin-right: 8px
+    font-size: 20px
+    line-height: 23px
+    font-weight: 600
+
+@media (max-width: 1200px)
+  .AnswerItem
+    &:focus
+      outline: none
+      border: none
+@media (max-width: 420px)
+  .AnswerText
+    margin-left: 20px
+    max-width: 260px
+    font-size: 14px
+    line-height: 16px
+    span
+      font-size: 14px
+      line-height: 16px
+  .AnswerItem
+    width: 100%
+    margin-bottom: 0px
+
+    &::before
+      left: -100%
+      width: 100%
+    &::after
+      right: -100%
+      width: 100%

@@ -1,0 +1,35 @@
+@import '../../../vars.module'
+
+.PriceLvlItem
+  width: 100%
+  height: 40px
+  display: flex
+  justify-content: center
+  align-items: center
+  color: $black
+  &:not(:last-child)
+    margin-top: 8px
+  &.passed
+    color: $grey
+  &.active
+    color: $orange-inactive
+    &::before
+      background-color: $orange-inactive
+    svg path
+      stroke: $orange-inactive
+  &::before
+    content: ''
+    width: 100%
+    position: absolute
+    height: 1px
+    background-color: #D0D0D8
+  span
+    z-index: 999
+    position: relative
+    font-size: 20px
+    line-height: 23px
+  svg
+    width: 240px
+    position: absolute
+    path
+      stroke: #D0D0D8

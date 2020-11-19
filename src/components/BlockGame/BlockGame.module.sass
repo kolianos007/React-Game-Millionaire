@@ -1,0 +1,33 @@
+.BlockGame
+  padding: 133px 0 122px
+  box-sizing: border-box
+  &Quiz
+    justify-content: space-between
+    display: flex
+    flex-direction: column
+    height: 100%
+
+.Question
+  width: 624px
+  font-size: 32px
+  line-height: 37px
+  font-weight: 600
+
+@media (max-width: 1200px)
+  .BlockGame
+    padding: 50px 0
+    width: 100%
+    &Quiz
+      justify-content: center
+      align-items: center
+  .Question
+    margin-bottom: 100px
+    text-align: center
+    width: 100%
+    padding: 0 15px
+
+@media (max-height: 600px)
+  .Question
+    margin-bottom: 40px
+    font-size: 24px
+    line-height: 28px
